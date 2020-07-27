@@ -1,0 +1,27 @@
+
+#Example 1
+
+
+class Tree(dict):
+    def __missing__(self, key):
+        value = self[key] = type(self)()
+        return value
+dict={"pavi":{"Abarna":"nive"},"friend":"varshaa"}
+obj=Tree(dict)
+print(obj)
+#it is like tree hierarchy using dictionary
+
+
+#Exmple 2
+
+
+tree = {
+    'carnivora': {
+        'canis': {
+            'c.lupus': 'c.l.familiaris'
+        },
+        'felis': 'f.catus'
+    }
+}
+print(tree)
+
