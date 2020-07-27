@@ -1,0 +1,63 @@
+#Decorators are special kind of thing in python
+
+#Demo 1
+
+import datetime
+def timer(func):
+    def wrapper():
+        start = datetime.datetime.now()
+        func()
+        runtime = datetime.datetime.now() - start
+        print(runtime)
+    return wrapper
+@timer   #decorator
+def pointless():
+    for i in range(20000000):
+        x = i*2
+    print(x)
+pointless()
+
+'''Output:
+39999998
+0:00:03.047415
+'''
+
+
+#Demo 2
+
+import datetime
+def timer(func):
+    def wrapper():
+        start = datetime.datetime.now()
+        func()
+        runtime = datetime.datetime.now() - start
+        print(runtime)
+    return wrapper
+def repeat(func):
+    def wrapper():
+        for i in range(2):
+            func()
+            print(i)
+    return wrapper
+@repeat
+@timer
+def pointless():
+    for i in range(20000000):
+        x = i*2
+    print(x)
+pointless()
+
+
+'''
+OUTPUT:
+39999998
+0:00:03.047415
+0
+39999998
+0:00:02.900352
+1
+'''
+
+
+
+
