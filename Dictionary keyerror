@@ -1,0 +1,40 @@
+#Demo 1
+
+
+dictionary = {
+    'one': 1,
+    'two': 2
+}
+dictionary['three']
+
+#it will give keyerror
+#we have to use try catch etc...to handle the error.
+
+
+
+
+#Demo 2(feature)
+
+dictionary = {
+    'one': 1,
+    'two': 2
+}
+dictionary.get('ab') #this key not available in this dictionary.
+
+#It will not give error instead of that it will give  "None"
+
+
+
+#Demo 3
+
+dictionary = {
+    'one': 1,
+    'two': 2
+}
+dictionary.get('ab',"This key is not available in dictionary")   #we can create msg like this
+
+#it will give "This key is not available in dictionary"...
+
+
+
+
